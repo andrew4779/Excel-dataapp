@@ -1,17 +1,18 @@
-
 {% extends 'base.html'%} {%load crispy_forms_tags%} {% block content %} {{block.super}}
 <div class="container"><br><br>
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-            <h1 class="text-center border-bottom mb-4"> Bronx🏴</h1>
+            <h1 class="text-center border-bottom mb-4">Hokela</h1>
             <form method="POST">
                 {% csrf_token %}
                 <fieldset class="form-group">
                     {{ form|crispy }}
                 </fieldset>
-                <div class="form-group text-center">
-                    <button class="btn btn-outline-info" type="submit">Log In</button>
+                <div class="border-top pt-3 text-center">
+                    <small class="text-muted">
+                        <a href="/accounts/login">Log In</a>
+                    </small>
                 </div>
             </form><br>
         </div>
