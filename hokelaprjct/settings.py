@@ -44,10 +44,11 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "hokelaapp",
     "crispy_forms",
+    "import_export",
     "rest_framework",
     "django_registration",
     "bootstrap4",
-    "cloudinary"
+    "cloudinary",
 ]
 
 MIDDLEWARE = [
@@ -133,13 +134,16 @@ STATIC_URL = "static/"
 
 
 
-
 # adding config
 cloudinary.config(
   cloud_name = "dv5kkzgqy",
   api_key = "132249491479223",
   api_secret = "JorPJSDD7y84_8p_ELkEvGOVnnU",
 )
+
+LOGIN_URL = '/login'
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/accounts/register'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
