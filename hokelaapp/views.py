@@ -6,6 +6,22 @@ from django.contrib import messages
 import datetime as dt
 from .models import Excel
 from tablib import Dataset
+from django.shortcuts import render,redirect
+from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import Excel
+from tablib import Dataset
+# from.serializer import ExcelSerializer
+import io, csv
+from .forms import *
+import datetime
+from django.contrib import messages
+from django.contrib.auth.decorators import permission_required,login_required
+import os
+from django.conf import settings
+from django.contrib.auth import login,authenticate,logout
+from django.contrib.auth.forms import UserCreationForm,AuthenticationForm
 # from .resources import ExcelResource
 # Create your views here.
 
@@ -38,4 +54,4 @@ def excel_upload(request):
                 data[9]
                 )
             value.save()
-    return render(request, 'index.html')
+    return render(request, 'home.html')
