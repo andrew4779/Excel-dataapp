@@ -10,7 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import os
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +47,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "django_registration",
     "bootstrap4",
+    "cloudinary"
 ]
 
 MIDDLEWARE = [
@@ -125,6 +130,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
 STATIC_URL = "static/"
+
+
+
+
+# adding config
+cloudinary.config(
+  cloud_name = "dv5kkzgqy",
+  api_key = "132249491479223",
+  api_secret = "JorPJSDD7y84_8p_ELkEvGOVnnU",
+)
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
